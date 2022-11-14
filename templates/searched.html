@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Searched
+{% endblock %}
+
+{% block main %}
+    <div>
+        <table id="spacing" class="table table-sm table-borderless">
+            <tbody>
+                {% for show in shows %}
+                <tr class="white">
+                    <td> <img src={{imageURL}}{{show.image}} alt="{{imageURL}}{{show.image}}"></td>
+                    <td>
+                        <h1> {{show.title}} </h1> <h5> Show ID: #{{show.id}} </h5><br>
+                        <h6>
+                        {% for genre in show.genres %}
+                            {{genre}}.
+                        {% endfor %}
+                        </h6> <br>
+                        <h3> Public Rating: {{show.rating}} </h3> <br>
+                        <p> {{show.overview}} </p>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

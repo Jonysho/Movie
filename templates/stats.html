@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Stats
+{% endblock %}
+
+{% block main %}
+
+    <h3><b>My Stats:</b></h3>
+        <table id="table" class="table table-sm table-borderless">
+            <tbody>
+                <tr class="white">
+                    <td>Total Watchtime: {{stats.total_mins // 60}} hours {{stats.total_mins % 60}} minutes </td>
+                </tr>
+                <tr class="white">
+                    <td>Total Movie Watchtime: {{stats.total_mv_mins // 60}} hours {{stats.total_mv_mins % 60}} minutes </td>
+                </tr>
+                <tr class="white">
+                    <td>Total TV shows Watchtime: {{stats.total_tv_mins // 60}} hours {{stats.total_tv_mins % 60}} minutes </td>
+                </tr>
+                <tr class="white">
+                    <td> Longest Movie Watched: {{stats.mv}} ({{stats.mv_mins // 60}} hours {{stats.mv_mins % 60}} minutes)</td>
+                </tr>
+                <tr class="white">
+                    <td> Longest TV Show Watched: {{stats.tvshow}} ({{stats.tvshow_mins // 60}} hours {{stats.tvshow_mins // 60}} minutes)</td>
+                </tr>
+            </tbody>
+        </table>
+
+{% endblock %}
+
+-movie hours watched
+    -longest movie watched
+    -tv show hours watched
+    -longest tv show watched
+    -total hours watched

@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+    <h3><b>Trending</b></h3>
+    <div class="wrap">
+        <table id="table" class="table table-sm table-borderless">
+            <tbody>
+                <tr>
+                    {% for image in trend %}
+                        <td> <img src={{image}} alt="image"> </td>
+                    {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3><b>Popular TV Shows</b></h3>
+    <div class="wrap">
+        <table id="table" class="table table-sm table-borderless">
+            <tbody>
+                <tr>
+                    {% for image in tvpop %}
+                        <td> <img src={{image}} alt="image"> </td>
+                    {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3><b>New & Upcoming</b></h3>
+    <div class="wrap">
+        <table id="table" class="table table-sm table-borderless">
+            <tbody>
+                <tr>
+                    {% for each in upcoming %}
+                        <td>
+                            <img src={{each.image}} alt="image">>
+                            <h4> {{each.date}} </h4>
+                        </td>
+                    {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block main %}
+    <form action="/search" method="post">
+
+        <div class="mb-3">
+            <label for="cars">Filter By:</label>
+            <select name="type" id="type">
+                <option value="mv">Movies</option>
+                <option value="tv">TV shows</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="num">Amount displayed:</label>
+            <input id="num" type="number" name="num" step="1" min="1" max="10" value="1">
+        </div>
+
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="title" name="title" placeholder="Title" type="text">
+        </div>
+
+        <div class="mb-3">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </form>
+{% endblock %}

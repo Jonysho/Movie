@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My List
+{% endblock %}
+
+{% block main %}
+    <div class="wrapper">
+        <table id="table" class="table table-sm table-borderless">
+            <thead>
+                <tr class="thead table-dark" >
+                    <th>#</th>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for each in shows %}
+                <tr id = rows>
+                    <td> {{each.rank}} </td>
+                    <td> <img src={{each.image}} alt="image"> </td>
+                    <td> {{each.title}} </td>
+                    <td> {{each.rating}} </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

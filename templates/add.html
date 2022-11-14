@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add
+{% endblock %}
+
+{% block main %}
+    <form action="/add" method="post">
+
+        <div class="mb-3">
+            <label for="type">Search By:</label>
+            <select name="type" id="type">
+                <option value="mv">Movies</option>
+                <option value="tv">TV shows</option>
+            </select>
+            <label> ID: </label>
+            <input type="checkbox" id="show_id" name="show_id" value="show_id">
+        </div>
+
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="title" name="title" placeholder="Title" type="text">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="rating" name="rating" placeholder="Rating">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary" type="submit">Add</button>
+        </div>
+    </form>
+{% endblock %}
